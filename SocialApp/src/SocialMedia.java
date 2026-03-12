@@ -1,36 +1,38 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class SocialMedia {
+public class SocialMedia{
 
     public static void main(String[] args) {
 
-        HashMap<String, Integer> gamers = new HashMap<>();
+        HashMap<String, Integer> emails = new HashMap<>();
         Scanner sc = new Scanner(System.in);
 
-        // Existing gamer usernames
-        gamers.put("DragonSlayer", 201);
-        gamers.put("ShadowNinja", 202);
-        gamers.put("ProGamer", 203);
+        // Existing email accounts
+        emails.put("john@gmail.com", 1);
+        emails.put("admin@gmail.com", 2);
+        emails.put("alex@gmail.com", 3);
 
-        System.out.print("Enter gamer username: ");
-        String username = sc.nextLine();
+        System.out.print("Enter email address: ");
+        String email = sc.nextLine();
 
-        if (gamers.containsKey(username)) {
+        if (emails.containsKey(email)) {
 
-            System.out.println("Username '" + username + "' is already taken.");
+            System.out.println("Email '" + email + "' is already registered.");
 
             // Suggestions
-            System.out.println("Suggested gamer tags:");
-            System.out.println(username + "99");
-            System.out.println(username + "X");
-            System.out.println("Pro_" + username);
-            System.out.println(username + "_Gaming");
+            String name = email.split("@")[0];
+
+            System.out.println("Suggested email addresses:");
+            System.out.println(name + "123@gmail.com");
+            System.out.println(name + "2026@gmail.com");
+            System.out.println(name + "_official@gmail.com");
+            System.out.println("real_" + name + "@gmail.com");
 
         } else {
 
-            gamers.put(username, gamers.size() + 200);
-            System.out.println("Gamer username '" + username + "' registered successfully!");
+            emails.put(email, emails.size() + 1);
+            System.out.println("Email '" + email + "' registered successfully!");
         }
 
         sc.close();

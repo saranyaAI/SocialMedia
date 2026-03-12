@@ -5,34 +5,32 @@ public class SocialMedia {
 
     public static void main(String[] args) {
 
-        HashMap<String, Integer> users = new HashMap<>();
+        HashMap<String, Integer> gamers = new HashMap<>();
         Scanner sc = new Scanner(System.in);
 
-        // Existing usernames in the system
-        users.put("john_doe", 101);
-        users.put("admin", 102);
-        users.put("alex", 103);
+        // Existing gamer usernames
+        gamers.put("DragonSlayer", 201);
+        gamers.put("ShadowNinja", 202);
+        gamers.put("ProGamer", 203);
 
-        System.out.print("Enter username to check: ");
+        System.out.print("Enter gamer username: ");
         String username = sc.nextLine();
 
-        // Check availability
-        if (users.containsKey(username)) {
+        if (gamers.containsKey(username)) {
 
-            System.out.println("checkAvailability(\"" + username + "\") → false (already taken)");
+            System.out.println("Username '" + username + "' is already taken.");
 
-            // Suggest alternatives
-            System.out.println("Suggested usernames:");
-            System.out.println(username + "1");
-            System.out.println(username + "2");
-            System.out.println(username + "123");
-
-            String modified = username.replace('_', '.');
-            System.out.println(modified);
+            // Suggestions
+            System.out.println("Suggested gamer tags:");
+            System.out.println(username + "99");
+            System.out.println(username + "X");
+            System.out.println("Pro_" + username);
+            System.out.println(username + "_Gaming");
 
         } else {
 
-            System.out.println("checkAvailability(\"" + username + "\") → true (available)");
+            gamers.put(username, gamers.size() + 200);
+            System.out.println("Gamer username '" + username + "' registered successfully!");
         }
 
         sc.close();
